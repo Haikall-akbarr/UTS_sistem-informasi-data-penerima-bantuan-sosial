@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -8,6 +9,8 @@ class Alamat extends Model
 {
     use HasFactory;
 
+    protected $table = 'alamats';
+
     protected $fillable = [
         'provinsi',
         'kota_kabupaten',
@@ -16,10 +19,4 @@ class Alamat extends Model
         'kode_pos',
         'alamat_lengkap',
     ];
-
-    // Relasi ke tabel Penerima
-    public function penerima()
-    {
-        return $this->hasMany(Penerima::class, 'id_alamat');
-    }
 }

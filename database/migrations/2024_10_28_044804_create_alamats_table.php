@@ -12,7 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('alamats', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_alamat');
+            $table->string('provinsi');
+            $table->string('kota_kabupaten');
+            $table->string('kecamatan');
+            $table->string('desa_kelurahan');
+            $table->string('kode_pos');
+            $table->text('alamat_lengkap');
             $table->timestamps();
         });
     }
